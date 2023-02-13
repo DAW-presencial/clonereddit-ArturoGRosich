@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::resource('/posts', PostController::class);
+
+Route::fallback(function () {
+    return redirect()->route('posts.create');
+});
+
 Route::get('/', function () {
     return view('welcome');
 });

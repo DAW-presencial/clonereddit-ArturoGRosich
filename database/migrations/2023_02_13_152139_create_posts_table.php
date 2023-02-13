@@ -22,7 +22,7 @@ return new class extends Migration
             $table->smallInteger('expirable');
             $table->smallInteger('comentable');
             $table->smallInteger('public');
-            $table->foreignId('user_id')->nullable()->constrained();
+            $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });
     }
@@ -35,5 +35,5 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('posts');
-    }
+    }   
 };
